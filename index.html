@@ -28,7 +28,7 @@
             class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200">
     
             <div class="bg-green-600 px-4 py-1 rounded-lg mt-24" id="date-span">
-                <span class="text-white font-medium"> Ter á Dom - 18:00 as 00:00</span>
+                <span id="horario_atendimento" class="text-white font-medium"></span> <!--retirei o texto e identifiquei como hora atendimento-->
             </div>
         </div>
     </header>
@@ -39,6 +39,7 @@
                 <ul class="flex justify-center space-x-8 font-bold text-lg">
                     <li><a href="/index.html" onclick="loadContent('cardapio')" aria-label="Ir para o Cardápio">Cardápio</a></li>
                     <li><a href="/sobre.html" onclick="loadContent('sobre-nos')" aria-label="Ir para Sobre Nós">Sobre Nós</a></li>
+                    <li><a href="/manut.html" onclick="loadContent('sobre-nos')" aria-label="Ir para Sobre Nós"><img src="assets\luz_acesa.png" alt="luz" style="width:10px; align-items:end;"></a></li>
                 </ul>
             </div>
         </nav>
@@ -538,6 +539,16 @@
      <script src="/scripts.js"></script>
    
 </div>
+
+<script>
+    // Verifica se há um horário armazenado no localStorage
+    const horario = localStorage.getItem("horario_atendimento");
+
+    // Se houver, atualiza o conteúdo do elemento com o novo horário
+    if (horario) {
+        document.getElementById("horario_atendimento").innerHTML = horario;
+    }
+</script>
 
 </body>
 </html>
